@@ -5,6 +5,8 @@ import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
 
 
+
+
 Future<List<News>> getNews()async{
   List<News> newsList = [];
   const String url = 'https://ajmansa.com/api-news';
@@ -14,5 +16,5 @@ Future<List<News>> getNews()async{
     newsList =  List<News>.from(jsonResponse.map((i) => News.fromJson(i)));
     return newsList;
   }
-  throw Exception('Failed to load post');
+  return newsList;
 }

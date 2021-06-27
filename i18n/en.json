@@ -25,7 +25,7 @@
  "youtube": "youtube",
  "instagram": "instagram",
  "monthly":"monthly",
- "academiy_subscribers": "Academiy subscribers",
+ "academiy_subscribers": "My Kids",
  "empty_field": "Empty field",
  "user_name": "User Name",
  "user_password": "User Password",
@@ -39,6 +39,11 @@
  "logout_message": "You have been logged out",
  "user_email": "Email address",
  "confirm": "confirm",
- "wrong_email": "wrong Email Address",
- "email_sent": "Email sent with password"
+ "wrong_email": "Email not registered in the academy",
+ "email_sent": "Email sent with password",
+ "language": "App language",
+ "ok": "Ok",
+ "en_lang": "English",
+ "ar_lang": "Arabic",
+ "network_failed": "connection failed"
 }

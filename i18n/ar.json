@@ -25,7 +25,7 @@
   "youtube": "يوتيوب",
   "instagram": "انستجرام",
   "monthly":"شهريا",
-  "academiy_subscribers": "المشتركين في الاكاديميه",
+  "academiy_subscribers": "أطفالي",
   "empty_field": "حقل فارغ",
   "user_name": "اسم المستخدم",
   "user_password": "كلمه المرور",
@@ -39,6 +39,11 @@
   "logout_message": "لقد تم تسجيل الخروج",
   "user_email": "ايميل",
   "confirm": "تاكيد",
-  "wrong_email": "عنوان بريد إلكتروني خاطئ",
-  "email_sent": "تم إرسال البريد الإلكتروني بكلمة مرور"
+  "wrong_email": " بريد إلكتروني غير مسجل بالاكاديميه",
+  "email_sent": "تم إرسال البريد الإلكتروني بكلمة مرور",
+  "language": "لغة التطبيق",
+  "ok": "تاكيد",
+  "en_lang": "اللغه الانجليزيه",
+  "ar_lang": "اللغه العربيه",
+  "network_failed": "خطا في الاتصال"
 }

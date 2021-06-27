@@ -3,6 +3,7 @@ import 'package:ajman_app/src/providers/app_lang.dart';
 import 'package:ajman_app/src/providers/check_login_provider.dart';
 import 'package:ajman_app/src/resources/set_body_function.dart';
 import 'package:ajman_app/src/resources/set_logout_loader_function.dart';
+import 'package:ajman_app/src/ui/widgets/language_dialog.dart';
 import 'package:ajman_app/src/ui/widgets/powered_by_daem_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -34,14 +35,6 @@ myDrawer(BuildContext context) {
         Divider(),
 
         drawerList(context),
-
-
-        Divider(),
-
-
-
-        poweredByWidget(context),
-
 
 
 
@@ -168,15 +161,15 @@ drawerList(BuildContext context) {
 
         ListTile(
           onTap: (){
-            setMainBody(6, context);
-
+            Navigator.of(context).pop();
+            LanguageDialog().showAlertDialog(context);
           },
           leading: Icon(
-            Icons.location_on,
+            Icons.language,
             color: Colors.deepOrange,
           ),
           title: Text(
-            AppLocalizations.of(context).translate('location'),
+            AppLocalizations.of(context).translate('language'),
             style: TextStyle(
                 fontSize: 18.0,
                 color: Color(0xff0e4c53)

@@ -9,9 +9,10 @@ import 'package:flutter/material.dart';
 
 void forgetPassword(String userEmail,BuildContext context)async{
 
-  const String url ='';
+  const String url ='https://ajmansa.com/forget-password1';
+
   var response = await http.post(
-      Uri.parse(url+userEmail),
+      Uri.parse(url),
     headers: <String, String>{
       'Content-Type': 'application/json; charset=UTF-8',
     },
@@ -20,18 +21,25 @@ void forgetPassword(String userEmail,BuildContext context)async{
     }),
   );
 
+
+
+
   if(response.statusCode == 200 ){
-    if(response.body == ''){
+
+    if(response.body == 'email sent'){
       Navigator.of(context).pop();
       showSnackBar(AppLocalizations.of(context).translate('email_sent'), context);
 
-    }else if(response.body == ''){
+    }else if(response.body == 'wrong email'){
       Navigator.of(context).pop();
       showSnackBar(AppLocalizations.of(context).translate('wrong_email'), context);
     }
 
+  }else {
+    Navigator.of(context).pop();
+    showSnackBar(AppLocalizations.of(context).translate('network_failed'), context);
   }
-  throw Exception('Failed to call api');
+
 
 
 }

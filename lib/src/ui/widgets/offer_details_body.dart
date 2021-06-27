@@ -4,7 +4,11 @@ import 'package:google_fonts/google_fonts.dart';
 
 
 
+
+
 Widget OfferDetailsBody(BuildContext context, Offers offersList){
+
+
   return SingleChildScrollView(
     child: Column(
       children:[
@@ -13,6 +17,7 @@ Widget OfferDetailsBody(BuildContext context, Offers offersList){
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
+
               IconButton(
                   onPressed: (){
                     Navigator.of(context).pop();
@@ -34,29 +39,43 @@ Widget OfferDetailsBody(BuildContext context, Offers offersList){
           ),
         ),
 
-       CircleAvatar(
-            radius: 70.0,
-            child: Padding(
-              padding: EdgeInsets.all(15),
-              child: Text(
-                offersList.offerssubtitle == null || offersList.offerssubtitle.isEmpty ?
-                'لايوجد ':offersList.offerssubtitle,
-                textAlign: TextAlign.center,
-                style: GoogleFonts.amiri(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold),),
-            ),
-            backgroundColor: Color(0xffAAC9CE),
-          ),
+        SizedBox(height: MediaQuery.of(context).size.height / 20,),
+
+
+        Container(
+            child: FadeInImage.assetNetwork(
+              image: 'https://ajmansa.com/'+offersList.offerimage,
+              placeholder:'images/spinner.gif',
+              fit: BoxFit.fill,
+            )
+        ),
+
+
+
+        SizedBox(height: MediaQuery.of(context).size.height / 20,),
+
+        Center(
+          child: Text(
+            offersList.offerssubtitle == null || offersList.offerssubtitle.isEmpty ?
+            'لايوجد ':offersList.offerssubtitle,
+            textAlign: TextAlign.center,
+            style: GoogleFonts.amiri(
+                fontSize: 20,
+                fontWeight: FontWeight.bold),),
+        ),
+
+
 
         Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Text(
-            offersList.offersdescription,
-            textAlign: TextAlign.center,
-            style: GoogleFonts.amiri(
-              fontSize: 20.0,
-              fontWeight: FontWeight.bold
+          child: Center(
+            child: Text(
+              offersList.offersdescription,
+              textAlign: TextAlign.center,
+              style: GoogleFonts.amiri(
+                fontSize: 20.0,
+                fontWeight: FontWeight.bold
+              ),
             ),
           ),
         )

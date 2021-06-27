@@ -2,6 +2,7 @@ import 'package:ajman_app/src/models/loader_dialog.dart';
 import 'package:ajman_app/src/providers/app_lang.dart';
 import 'package:ajman_app/src/resources/apis/forget_password_api.dart';
 import 'package:ajman_app/src/resources/close_keyboard_function.dart';
+import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 
 
@@ -13,7 +14,10 @@ final GlobalKey<State> loaderDialog = new GlobalKey<State>();
 
 
 
+
 void forgetPasswordAlert(BuildContext context){
+
+
   Widget okButton =
   ElevatedButton(
     style: ButtonStyle(
@@ -22,9 +26,16 @@ void forgetPasswordAlert(BuildContext context){
     child: Text(AppLocalizations.of(context).translate('confirm')),
     onPressed: () {
       if(formKey.currentState.validate()){
-        Navigator.of(context).pop();
-        LoaderDialog.showLoadingDialog(context, loaderDialog);
-        forgetPassword(userEmailController.text.trim(),context);
+
+        if(EmailValidator.validate(userEmailController.text) == true ){
+          Navigator.of(context).pop();
+          LoaderDialog.showLoadingDialog(context, loaderDialog);
+          forgetPassword(userEmailController.text.trim(),context);
+        }else {
+          Navigator.of(context).pop();
+          showSnackBar(AppLocalizations.of(context).translate('wrong_email'), context);
+        }
+
 
       }
     },

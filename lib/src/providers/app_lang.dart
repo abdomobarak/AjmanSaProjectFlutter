@@ -3,6 +3,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+
+
 class AppLocalizations {
   final Locale locale;
   AppLocalizations(this.locale);
@@ -40,6 +42,8 @@ class AppLocalizations {
 
 
 
+
+
 class _AppLocalizationsDelegate
     extends LocalizationsDelegate<AppLocalizations> {
   // This delegate instance will never change (it doesn't even have fields!)
@@ -51,6 +55,8 @@ class _AppLocalizationsDelegate
     // Include all of your supported language codes here
     return ['en', 'ar'].contains(locale.languageCode);
   }
+
+
 
   @override
   Future<AppLocalizations> load(Locale locale) async {

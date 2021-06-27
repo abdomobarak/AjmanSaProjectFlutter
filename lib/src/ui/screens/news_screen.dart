@@ -7,6 +7,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+
+
+
 class NewsScreen extends StatelessWidget {
   const NewsScreen({Key key}) : super(key: key);
 

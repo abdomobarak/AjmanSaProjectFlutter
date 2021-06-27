@@ -12,6 +12,11 @@
 	<string>6.0</string>
 	<key>CFBundleName</key>
 	<string>AjmanSa</string>
+	<key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>googlechromes</string>
+        <string>comgooglemaps</string>
+    </array>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>

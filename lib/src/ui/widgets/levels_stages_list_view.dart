@@ -6,8 +6,11 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 
+
+
 Widget buildLevelsStagesList(BuildContext context){
   var levelsStagesProvider = Provider.of<LevelsStagesProvider>(context);
+
   if(levelsStagesProvider.levelsStagesList == null ){
     return Center(
       child:Image(
@@ -35,28 +38,28 @@ Widget buildLevelsStagesList(BuildContext context){
 
 
 
+
 levelsStageListItem(BuildContext context, Stages levelsStagesList) {
 
-return Card(
+return   Padding(
+  padding: const EdgeInsets.all(8.0),
+  child: Center(
+    child:Column(
+      children: [
 
-  semanticContainer: true,
-  clipBehavior: Clip.antiAliasWithSaveLayer,
-  margin: EdgeInsets.all(7),
-  shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(15)
-  ),
-  child:   Padding(
-    padding: const EdgeInsets.all(8.0),
-    child: Center(
-      child: Text(
+        Text(
           levelsStagesList.stagetitle,
           textAlign: TextAlign.center,
-        style: GoogleFonts.amiri(
-            fontWeight: FontWeight.bold,
-          fontSize: 18.0
+          style: GoogleFonts.amiri(
+              fontWeight: FontWeight.bold,
+              fontSize: 18.0
+          ),
         ),
-      ),
-    ),
+
+        Divider()
+      ],
+    )
+
   ),
 );
 }
